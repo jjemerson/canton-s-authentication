@@ -1,0 +1,9 @@
+asm1	asm2
+CS_DLPD	CS_DSPR
+CS_DLPD	CS_Wierz
+CS_DSPR	CS_Wierz
+CS_Liu	CS_DLPD
+CS_Liu	CS_DSPR
+CS_Liu	CS_Wierz
+A3_Shukla	A3_DSPR
+CS_Liu	A3_Shukla

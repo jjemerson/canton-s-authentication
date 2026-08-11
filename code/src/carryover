@@ -1,0 +1,217 @@
+#!/usr/bin/env bash
+#
+# carryover - lift coordinates from a reference FASTA to a query FASTA via
+#             minimap2/paftools.js, optionally extracting the corresponding
+#             sequence from the query, with arm-labeled headers.
+#
+# Shared liftover/extraction tool used by 20_extract_euchromatin.sh.
+# Standalone (not sourced/embedded) since it's shared infrastructure for
+# multiple downstream analyses, not one stage's private implementation
+# detail.
+#
+set -euo pipefail
+
+_usage() {
+    echo "usage: $(basename "$0") -p PAF -c COORDS.bed -b LIFTED.bed [-r REF.fa] [-f OUT.fa] [-q MINQ] [-l MINLEN] [-t THREADS] [-T TMPDIR] [-F] [QUERY.fa]" >&2
+    echo "       $(basename "$0") -h  for full help" >&2
+}
+
+_help() {
+    cat <<'EOF'
+carryover - lift coordinates from a reference FASTA to a query FASTA via
+            minimap2/paftools.js, optionally extracting the corresponding
+            sequence from the query, with arm-labeled headers.
+
+USAGE
+    carryover -p PAF -c COORDS -b LIFTED [-r REF.fa] [-f OUT.fa] [-q MINQ] [-l MINLEN] [-t THREADS] [-T TMPDIR] [-F] [QUERY.fa]
+
+REQUIRED
+    -p PAF       Path to a PAF alignment file.
+                 - If -r is given: OUTPUT path; minimap2 writes here.
+                 - If -r is omitted: INPUT path; must already exist.
+    -c COORDS    4-column BED (chrom, start, end, arm; 0-based, half-open)
+                 with coordinates in the reference's (-r) coordinate
+                 system. Column 4 is a stable arm label carried through
+                 to -b and, if -f is given, into extracted headers. Each
+                 row's full interval is lifted, not just its two
+                 endpoints -- the lifted output is the min/max span of
+                 whichever alignment blocks meeting -q/-l intersect it,
+                 so it self-trims at unreliable regions near either edge
+                 rather than needing a manually-tuned padding distance.
+    -b LIFTED    Output path for lifted coordinates (4-column BED:
+                 query_chrom, start, end, arm). Always written.
+
+OPTIONAL
+    -r REF.fa    Reference FASTA (source of -c coordinates). If given,
+                 alignment is run before liftover. Internally, minimap2
+                 is called as `minimap2 QUERY.fa REF.fa` (query as
+                 target) so paftools.js liftover sees REF's names.
+                 If omitted, PAF must already exist.
+    -f OUT.fa    Output path for extracted sequence (FASTA). If given,
+                 sequence is extracted from QUERY.fa at the lifted
+                 coordinates. Each header is rewritten to
+                 ">ARM original_faidx_name" using the arm label from
+                 -b, so output is comparably labeled across genomes
+                 regardless of each genome's native contig naming.
+    -q MINQ      Min mapping quality for paftools.js liftover. Default: 30
+    -l MINLEN    Min alignment length for paftools.js liftover. Default: 10000
+    -t THREADS   Threads passed to minimap2 (only relevant when -r is
+                 given). Default: 1
+    -T TMPDIR    Directory for scratch files used internally when -f is
+                 given (a decompressed copy of a plain-gzip QUERY.fa, or
+                 a symlink to it if already uncompressed/BGZF -- either
+                 way avoids samtools faidx writing a .fai next to
+                 QUERY.fa itself). Cleaned up automatically afterward.
+                 Default: system temp directory (mktemp's default).
+    -F           Force overwrite if PAF already exists (only relevant
+                 when -r is given).
+    -h           Show this help and exit.
+
+QUERY.fa (positional)
+    Required if -r or -f is given (needed to align against, or to
+    extract from). Not required, and ignored with a warning if
+    supplied anyway, when neither -r nor -f is given.
+
+OUTPUT
+    -b LIFTED is always written. -f OUT.fa is written only if -f was
+    given. Nothing goes to stdout; check the files named by -b/-f.
+EOF
+}
+
+paf="" coords="" lifted="" ref="" out="" minq=30 minlen=10000 threads=1 tmpdir="" force=0 opt=""
+
+if [[ $# -eq 0 ]]; then
+    _usage
+    exit 1
+fi
+
+while getopts ":p:c:b:r:f:q:l:t:T:Fh" opt; do
+    case "$opt" in
+        p) paf=$OPTARG ;;
+        c) coords=$OPTARG ;;
+        b) lifted=$OPTARG ;;
+        r) ref=$OPTARG ;;
+        f) out=$OPTARG ;;
+        q) minq=$OPTARG ;;
+        l) minlen=$OPTARG ;;
+        t) threads=$OPTARG ;;
+        T) tmpdir=$OPTARG ;;
+        F) force=1 ;;
+        h) _help; exit 0 ;;
+        \?) echo "carryover: invalid option -$OPTARG" >&2; _usage; exit 1 ;;
+        :)  echo "carryover: option -$OPTARG requires an argument" >&2; _usage; exit 1 ;;
+    esac
+done
+shift $((OPTIND - 1))
+
+if [[ -z "$paf" || -z "$coords" || -z "$lifted" ]]; then
+    echo "carryover: -p, -c, and -b are required" >&2
+    _usage
+    exit 1
+fi
+
+query=""
+if [[ -n "$ref" || -n "$out" ]]; then
+    if [[ $# -ne 1 ]]; then
+        echo "carryover: QUERY.fa is required when -r or -f is given" >&2
+        _usage
+        exit 1
+    fi
+    query=$1
+else
+    if [[ $# -gt 0 ]]; then
+        echo "carryover: warning: QUERY.fa given but ignored (neither -r nor -f was set)" >&2
+    fi
+fi
+
+echo "mapping started"
+if [[ -n "$ref" ]]; then
+    if [[ -e "$paf" && "$force" -ne 1 ]]; then
+        echo "carryover: $paf already exists; use -F to overwrite" >&2
+        exit 1
+    fi
+    # NOTE: query is target, ref is query -- so paftools.js liftover
+    # (matches BED chrom against PAF col 1) sees ref's names.
+    minimap2 -t "$threads" -cx asm5 --cs "$query" "$ref" > "$paf"
+else
+    if [[ ! -e "$paf" ]]; then
+        echo "carryover: $paf does not exist and -r was not given to create it" >&2
+        exit 1
+    fi
+fi
+echo "mapping completed"
+
+echo "lifting started"
+
+# Process one arm at a time so the arm label never has to be
+# decoded back out of paftools.js's own output naming.
+#
+# Feed liftover the whole arm interval as given in -c, not a padded
+# point near each boundary: liftover reports one line per qualifying
+# alignment block (mapq >= -q, length >= -l) intersecting that interval,
+# and min/max over all of them is the well-supported extent of the arm --
+# self-trimming at whatever unreliable/gappy regions exist near either
+# edge, per genome, rather than betting on a single fixed distance being
+# far enough (which isn't a fixed number: different genomes' assemblies
+# hit assembly gaps/repeats at different distances from the boundary).
+: > "$lifted"
+while IFS=$'\t' read -r chrom start end arm; do
+    [[ -z "$chrom" ]] && continue
+    printf '%s\t%d\t%d\n' "$chrom" "$start" "$end" \
+    | paftools.js liftover -q "$minq" -l "$minlen" "$paf" - \
+    | awk -v arm="$arm" '
+        # Qualifying blocks for one arm can land on more than one target
+        # contig -- a handful of stray/spurious hits on an unrelated
+        # contig alongside hundreds on the real one, common with
+        # fragmented (contig-level, not chromosome-scale) assemblies.
+        # Positions on different contigs are not one coordinate system,
+        # so group by contig and report whichever one actually has the
+        # alignment support, not whichever line happens to be seen last.
+        {
+            c = $1
+            if (!(c in mn) || $2 < mn[c]) mn[c] = $2
+            if (!(c in mx) || $3 > mx[c]) mx[c] = $3
+            support[c] += ($3 - $2)
+        }
+        END {
+            best = ""
+            for (c in support) if (best == "" || support[c] > support[best]) best = c
+            if (best != "") print best"\t"mn[best]"\t"mx[best]"\t"arm
+        }
+      '
+done < "$coords" >> "$lifted"
+echo "lifting completed"
+
+if [[ -n "$out" ]]; then
+    # samtools faidx always writes its index next to whatever path it's
+    # given, so QUERY.fa is never handed to it directly -- that would
+    # leave a .fai next to QUERY.fa itself, and QUERY.fa isn't ours to
+    # write into (it's someone else's input, e.g. data/raw/). Everything
+    # goes through a scratch path in $tmpdir instead: a decompressed
+    # copy when QUERY.fa is plain-gzip (samtools faidx can't random-
+    # access that), or just a symlink otherwise, so the common case
+    # costs no copying at all.
+    mktemp_opts=(-u)
+    [[ -n "$tmpdir" ]] && mktemp_opts+=(-p "$tmpdir")
+    scratch=$(mktemp "${mktemp_opts[@]}" carryover.XXXXXX)
+
+    if [[ "$query" == *.gz ]] && ! htsfile "$query" 2>/dev/null | grep -q BGZF; then
+        gunzip -c "$query" > "$scratch"
+    else
+        ln -s "$(realpath "$query")" "$scratch"
+    fi
+
+    awk '{print $1":"$2+1"-"$3}' "$lifted" | samtools faidx "$scratch" -r - \
+        | bioawk -c fastx -v lifted="$lifted" '
+            BEGIN {
+                while ((getline line < lifted) > 0) {
+                    split(line, f, "\t")
+                    key = f[1]":"(f[2]+1)"-"f[3]
+                    arm[key] = f[4]
+                }
+            }
+            { print ">"arm[$name]" "$name; print $seq }
+          ' > "$out"
+    rm -f "$scratch" "${scratch}.fai"
+fi
+echo "carryover complete"

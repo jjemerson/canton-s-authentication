@@ -1,0 +1,46 @@
+# Conda/mamba environment spec for this pipeline. Created/checked by
+# configure.sh; direct dependencies only, pinned to what was actually
+# used and tested -- solver resolves everything transitive. Exact
+# transitive-dependency reproducibility (a full lockfile) is out of
+# scope here; this is what a reader re-running the pipeline needs.
+name: validate_cs
+channels:
+  - bioconda
+  - conda-forge
+dependencies:
+  # GNU tools this pipeline specifically depends on -- sort --parallel
+  # (stage 3) and -S are GNU-only, not available in BSD sort (macOS
+  # default), so this can't be left to "whatever's on PATH."
+  - coreutils=9.3
+  - gawk=5.3.0
+
+  # CLI tools
+  - wget=1.25.0
+  - minimap2=2.30       # also provides paftools.js
+  - k8=1.2               # JS runtime paftools.js needs
+  - samtools=1.23.1
+  - bioawk=1.0
+  - kmer-jellyfish=2.3.1  # bioconda's "jellyfish" is a different (string-
+                          # matching) package on some platforms; the k-mer
+                          # counter is "kmer-jellyfish" there. Same CLI
+                          # (binary is still called `jellyfish`), verified
+                          # against 30_kmer_count.sh's exact invocation.
+  - parallel=20260722
+
+  # R + packages (stages 6-7's swarm/tree plots)
+  - r-base=4.5.3
+  - r-optparse=1.8.2
+  - r-ggplot2=4.0.3
+  - r-ggrepel=0.9.8
+  - r-ape=5.8_1
+  - bioconductor-ggtree=4.0.4
+
+  # Python + packages (stage 7's pi-grid plot). python capped at 3.12 --
+  # not a technical requirement of this pipeline (3.14.4 was just
+  # whatever was on the dev machine), but kmer-jellyfish's bioconda
+  # build on osx-arm64 only ships python-linked variants (py39-py312),
+  # no python-independent build like linux-64 has. Pinning here avoids
+  # the two dependencies conflicting on that platform.
+  - python=3.12.13
+  - numpy=2.5.1
+  - matplotlib=3.11.1
