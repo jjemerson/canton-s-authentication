@@ -18,6 +18,11 @@
 
 ## Installation
 
+Requires conda or mamba on `PATH` -- neither ships with the OS on any
+platform. [Miniforge](https://github.com/conda-forge/miniforge) is a
+lightweight installer that defaults to the conda-forge/bioconda
+channels this pipeline's `environment.yml` already uses.
+
 Clone the repo and enter it:
 
 ```bash

@@ -66,7 +66,9 @@ if [[ -e "$OUTFILE" && "$FORCE" -ne 1 ]]; then
     exit 0
 fi
 
-mapfile -t labels < <(tail -n +2 "$GENOMES" | awk -F'\t' '{print $1"_"$2}')
+labels=()
+while IFS= read -r line; do labels+=("$line"); done \
+    < <(tail -n +2 "$GENOMES" | awk -F'\t' '{print $1"_"$2}')
 n=${#labels[@]}
 echo "$n genomes -> $(( n * (n - 1) / 2 )) pairwise comparisons, up to $CONCURRENT concurrent"
 

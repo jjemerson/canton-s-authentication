@@ -107,7 +107,7 @@ for ((n=RUN_FROM; n<=RUN_TO; n++)); do
     echo "Stage $n/$N_STAGES: $stage"
     echo "=================================================================="
     STAGE_START=$(date +%s)
-    "$SCRIPT_DIR/$stage" "${stage_force[@]}"
+    "$SCRIPT_DIR/$stage" ${stage_force[@]+"${stage_force[@]}"}
     STAGE_END=$(date +%s)
     printf '\n-> Stage %d (%s) done in %d s\n\n' "$n" "$stage" "$((STAGE_END - STAGE_START))"
 done
