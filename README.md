@@ -157,10 +157,13 @@ Developed and benchmarked on:
 - Storage: NVMe SSD
 - OS: Pop!_OS 24.04 LTS
 
-**Minimum recommended: 32 GiB RAM.** Three of the seven stages peak above
-12 GiB resident memory (see benchmark below) from running several
-genomes' minimap2/jellyfish jobs concurrently; 16 GiB is workable but
-leaves little headroom for anything else running at the same time.
+**Minimum recommended: 32 GiB RAM, ~50 GB free disk.** Three of the
+seven stages peak above 12 GiB resident memory (see benchmark below)
+from running several genomes' minimap2/jellyfish jobs concurrently; 16
+GiB is workable but leaves little headroom for anything else running
+at the same time. Disk is dominated by stage 3's singleton k-mer lists
+(~2.2 GB x 21 assemblies, ~46 GB total); a machine with less than ~50
+GB free will run out of space partway through stage 3.
 
 ## Benchmark
 
