@@ -84,10 +84,15 @@ download_genome() {
         return 0
     fi
 
-    echo "==> Downloading $label ($role)..."
     local tmp
     tmp=$(mktemp "$OUTDIR/.download.XXXXXX")
-    wget -q -O "$tmp" "$url"
+    if [[ "$url" =~ ^https?://|^ftp://|^ftps:// ]]; then
+        echo "==> Downloading $label ($role)..."
+        wget -q -O "$tmp" "$url"
+    else
+        echo "==> Copying $label ($role) from local path..."
+        cp "$url" "$tmp"
+    fi
 
     local magic out
     magic=$(head -c2 "$tmp" | od -An -tx1 | tr -d ' \n')
