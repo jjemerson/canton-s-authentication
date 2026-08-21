@@ -90,6 +90,11 @@ download_genome() {
         echo "==> Downloading $label ($role)..."
         wget -q -O "$tmp" "$url"
     else
+        if [[ ! -f "$url" ]]; then
+            echo "Error: local genome path not found for $label: $url" >&2
+            rm -f "$tmp"
+            return 1
+        fi
         echo "==> Copying $label ($role) from local path..."
         cp "$url" "$tmp"
     fi
