@@ -5,7 +5,7 @@
 ## Table of contents
 
 - [Installation](#installation)
-- [Background](#background)
+- [Provenance](#Provenance)
 - [Methods](#methods)
   - [Genome acquisition](#genome-acquisition)
   - [Euchromatin extraction](#euchromatin-extraction)
@@ -56,7 +56,7 @@ running a subset of stages (`-f/--from-stage`, `-o/--only-stage`), or
 run any individual `N0_*.sh` script directly for its own options (`-h`
 on any of them).
 
-## Background
+## Provenance
 
 Canton-S has passed through several stock centers and labs since its arrival at Caltech, and its custody chain includes a contamination episode documented by the Bloomington Drosophila Stock Center. Caltech transferred the strain to [Bloomington](https://bdsc.indiana.edu/) on April 1, 1987, which sent it on to the [Kyoto Stock Center](https://kyotofly.kit.jp/) on November 6, 2002 ([DGRC #105666](https://kyotofly.kit.jp/cgi-bin/stocks/search_res_det.cgi?DB_NUM=1&DG_NUM=105666); both dates as recorded in Kyoto's stock entry, which reproduces Bloomington's original accession information). By no later than 2006 (T. D. Long, personal communication), Bloomington had supplied Canton-S to T. D. Long's group, which incorporated it as founder line A1 of what became the Drosophila Synthetic Population Resource (DSPR), later sequenced and assembled by [Chakraborty et al. 2019](https://www.ncbi.nlm.nih.gov/assembly/GCA_003401735.1).
 
