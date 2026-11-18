@@ -5,9 +5,10 @@
 # Produces the two k-mer/Mash-D figures from stage 4's distances.tsv:
 # the swarm plot (categorized by strain relative to the focal assembly)
 # and the Neighbor-Joining tree (with same-strain highlight boxes). Both
-# are driven entirely by config/genomes.tsv's strain/role columns --
-# see code/analysis/plot_kmer_swarm.R and plot_kmer_tree.R for the
-# generic, no-hardcoded-names logic.
+# are driven by config/genomes.tsv's strain/role columns -- see
+# code/analysis/plot_kmer_swarm.R and plot_kmer_tree.R. Exception: the
+# swarm plot's intra-strain label positions (cat1_layout) are
+# hand-placed for the current panel.
 #
 set -euo pipefail
 
