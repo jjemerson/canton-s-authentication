@@ -62,7 +62,7 @@ Each Canton-S assembly has passed through multiple stock centers and at least on
 
 Bloomington's own resident Canton-S stock underwent a contamination episode documented by its record for the current stock, [BDSC #64349](https://bdsc.indiana.edu/Home/Search?presearch=64349): Canton-S was re-added from Kyoto's independently propagated line on February 19, 2016. The onset date was not documented.
 
-Bloomington subsequently supplied stock to the Wierzbicki lab, ordered by R. Kofler on January 16, 2018 (personal communication) and later assembled as [Wierzbicki et al. 2022](https://www.ncbi.nlm.nih.gov/assembly/GCA_015832445.1), and, in 2018, to the laboratory of Yi Zhong, from whom Liu et al. obtained the stock they sequenced and assembled as the ["near-T2T" Canton-S genome](https://www.ncbi.nlm.nih.gov/assembly/GCA_048772135.1) that is the focus of this repository's authentication pipeline. Separately, Mahul Chakraborty obtained Canton-S from Bloomington for the Drosophila Laboratory Pangenome Database (DLPD) project, ordering it on October 25, 2023; Bloomington shipped it on November 2, 2023 (personal communication). The DLPD assembly is unpublished, and its date here is taken from [a pinned version of Chakraborty's DLPD GitHub repository](https://github.com/chakrabortymlab/DLPD/blob/35f1d06cb1fb9b04583c9e980a62f700b91d0ce5/README.md).
+Bloomington subsequently supplied the stock to the Kofler lab, ordered by R. Kofler on January 16, 2018 (personal communication) and later assembled as [Wierzbicki et al. 2022](https://www.ncbi.nlm.nih.gov/assembly/GCA_015832445.1), and, in 2018, to the laboratory of Yi Zhong, from whom Liu et al. obtained the stock they sequenced and assembled as the ["near-T2T" Canton-S genome](https://www.ncbi.nlm.nih.gov/assembly/GCA_048772135.1) that is the focus of this repository's authentication pipeline. Separately, Mahul Chakraborty obtained Canton-S from Bloomington for the Drosophila Laboratory Pangenome Database (DLPD) project, ordering it on October 25, 2023; Bloomington shipped it on November 2, 2023 (personal communication). The DLPD assembly is unpublished, and its date here is taken from [a pinned version of Chakraborty's DLPD GitHub repository](https://github.com/chakrabortymlab/DLPD/blob/35f1d06cb1fb9b04583c9e980a62f700b91d0ce5/README.md).
 
 ![Supplementary Figure S1: Canton-S provenance diagram](figures/canton_s_provenance.png)
 
@@ -79,7 +79,7 @@ Assemblies are downloaded according to a control file
 (`config/genomes.tsv`) listing each strain, an author-abbreviation
 suffix disambiguating multiple independent submissions of the same
 strain, a role (focal, reference, or panel), and a source URL. Source
-and hosting vary by assembly (NCBI, GitHub, Google Drive), and
+and hosting vary by assembly (NCBI and Google Drive), and
 downloads run with bounded concurrency to remain courteous to source
 servers (`10_download_genomes.sh`).
 
