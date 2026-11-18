@@ -2,7 +2,8 @@
 
 Holds the three figures produced by stages 6 and 7: the pairwise
 Mash-distance swarm plot and the neighbor-joining tree
-(`swarm_plot.svg`, `nj_tree.svg`, written by `60_plot_kmer.sh`), and
+(`swarm_plot.svg`, `nj_tree.svg`, written by `60_plot_kmer.sh`, which
+also saves the tree object as `nj_tree.rds`), and
 the windowed nucleotide-diversity grid (`pi_grid.svg`, written by
 `70_plot_alignment.sh`). SVG by default; each script also supports PDF
 or PNG output via its `-o` extension.
