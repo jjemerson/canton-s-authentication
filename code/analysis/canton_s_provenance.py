@@ -168,9 +168,9 @@ def render(width=1260, height=700):
       'except for the 1987-2002 interval, which is compressed and marked with a break '
       'in the Bloomington line: Caltech transfers Canton-S to Bloomington in 1987; '
       'Bloomington sends it to Kyoto in 2002 and to the DSPR project in 2006; '
-      "Bloomington's own stock is contaminated from shortly after 2006 to 2016; "
-      'Kyoto sends a clean stock back to Bloomington in 2016; Bloomington supplies '
-      'the Wierzbicki and Liu labs in 2018 and the DLPD project in 2023; DSPR, '
+      "Bloomington's own stock is contaminated for an undocumented period before "
+      '2016; Kyoto sends a clean stock back to Bloomington in 2016; Bloomington '
+      'supplies the Kofler and Zhong labs in 2018 and the DLPD project in 2023; DSPR, '
       'Wierzbicki, Liu, and DLPD each culminate in a public data deposition.">')
 
     a('<defs>')
