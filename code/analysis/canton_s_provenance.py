@@ -143,7 +143,7 @@ SUB_LABELS = [
     # the line, tilted 35 deg ccw so the word reads climbing away from that
     # point rather than sitting directly under it or the transfer arrow above
     (730, LANE_Y["bloomington"] + 16, "end", None, "contaminated", -35),
-    (year_x(2006), LANE_Y["dspr"] + 22, "middle", None, "T. D. Long, 2006", 0),
+    (year_x(2006), LANE_Y["dspr"] + 22, "middle", None, "A. D. Long, 2006", 0),
     (year_x(2018), LANE_Y["wierzbicki"] - 16, "middle", None, "R. Kofler, 2018", 0),
     (year_x(2018), LANE_Y["liu"] + 20, "middle", None, "Y. Zhong, 2018", 0),
     (year_x(2023), LANE_Y["dlpd"] - 16, "middle", None, "M. Chakraborty, 2023", 0),
