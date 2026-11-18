@@ -35,9 +35,8 @@ Options:
   -t INT    Total threads available (default: nproc, this machine's total)
   -j INT    Threads given to each concurrent genome's jellyfish/sort --
             concurrency is -t / -j genomes at once. Default: 8 (near
-            where a single sort/jellyfish's own parallelism plateaus;
-            see 20260807 discussion in REFACTOR_SPEC.md). Capped at -t
-            on smaller machines.
+            where a single sort/jellyfish's own parallelism plateaus).
+            Capped at -t on smaller machines.
   -F        Force re-count, overwriting existing output
   -h        Show this help message
 EOF
