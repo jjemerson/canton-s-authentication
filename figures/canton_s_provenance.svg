@@ -1,726 +1,105 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   viewBox="0 0 1260 700"
-   role="img"
-   aria-label="Lineage diagram, drawn to a real calendar-year scale except for the 1987-2002 interval, which is compressed and marked with a break in the Bloomington line: Caltech transfers Canton-S to Bloomington in 1987; Bloomington sends it to Kyoto in 2002 and to the DSPR project in 2006; Bloomington's own stock is contaminated from shortly after 2006 to 2016; Kyoto sends a clean stock back to Bloomington in 2016; Bloomington supplies the Wierzbicki and Liu labs in 2018 and the DLPD project in 2023; DSPR, Wierzbicki, Liu, and DLPD each culminate in a public data deposition."
-   version="1.1"
-   id="svg82"
-   sodipodi:docname="canton_s_provenance.svg"
-   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg">
-  <sodipodi:namedview
-     id="namedview82"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     inkscape:zoom="1.4468942"
-     inkscape:cx="629.97005"
-     inkscape:cy="350.06016"
-     inkscape:window-width="1800"
-     inkscape:window-height="1102"
-     inkscape:window-x="0"
-     inkscape:window-y="39"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg82" />
-  <defs
-     id="defs11">
-    <style
-       id="style1">.label-inst{font-family:-apple-system,&quot;Helvetica Neue&quot;,Arial,sans-serif;font-weight:600;font-size:15px;}.label-sub{font-family:-apple-system,&quot;Helvetica Neue&quot;,Arial,sans-serif;font-weight:400;font-size:11px;fill:#6C766F;font-style:italic;}.label-year{font-family:&quot;Charter&quot;,Georgia,serif;font-variant-numeric:tabular-nums;font-size:13px;fill:#6C766F;}.legend-text{font-family:-apple-system,&quot;Helvetica Neue&quot;,Arial,sans-serif;font-size:13px;fill:#1E2422;}</style>
-    <marker
-       id="arrow-gold"
-       viewBox="0 0 10 10"
-       refX="9"
-       refY="5"
-       markerWidth="6"
-       markerHeight="6"
-       orient="auto">
-      <polygon
-         points="0,0 0,10 10,5"
-         fill="#B9821A"
-         id="polygon1" />
-    </marker>
-    <marker
-       id="arrow-blue"
-       viewBox="0 0 10 10"
-       refX="9"
-       refY="5"
-       markerWidth="6"
-       markerHeight="6"
-       orient="auto">
-      <polygon
-         points="0,0 0,10 10,5"
-         fill="#2C4A88"
-         id="polygon2" />
-    </marker>
-    <marker
-       id="arrow-red"
-       viewBox="0 0 10 10"
-       refX="9"
-       refY="5"
-       markerWidth="6"
-       markerHeight="6"
-       orient="auto">
-      <polygon
-         points="0,0 0,10 10,5"
-         fill="#9C2438"
-         id="polygon3" />
-    </marker>
-    <marker
-       id="arrow-ink"
-       viewBox="0 0 10 10"
-       refX="9"
-       refY="5"
-       markerWidth="6"
-       markerHeight="6"
-       orient="auto">
-      <polygon
-         points="0,0 0,10 10,5"
-         fill="#1E2422"
-         id="polygon4" />
-    </marker>
-    <linearGradient
-       id="fadeInGold"
-       gradientUnits="userSpaceOnUse"
-       x1="60"
-       y1="0"
-       x2="140"
-       y2="0">
-      <stop
-         offset="0"
-         stop-color="#B9821A"
-         stop-opacity="0"
-         id="stop4" />
-      <stop
-         offset="1"
-         stop-color="#B9821A"
-         stop-opacity="1"
-         id="stop5" />
-    </linearGradient>
-    <linearGradient
-       id="fadeOutBlue"
-       gradientUnits="userSpaceOnUse"
-       x1="994"
-       y1="0"
-       x2="1220"
-       y2="0">
-      <stop
-         offset="0"
-         stop-color="#2C4A88"
-         stop-opacity="1"
-         id="stop6" />
-      <stop
-         offset="0.4"
-         stop-color="#2C4A88"
-         stop-opacity="1"
-         id="stop7" />
-      <stop
-         offset="1"
-         stop-color="#2C4A88"
-         stop-opacity="0"
-         id="stop8" />
-    </linearGradient>
-    <linearGradient
-       id="fadeOutRed"
-       gradientUnits="userSpaceOnUse"
-       x1="756"
-       y1="0"
-       x2="880"
-       y2="0">
-      <stop
-         offset="0"
-         stop-color="#9C2438"
-         stop-opacity="1"
-         id="stop9" />
-      <stop
-         offset="0.4"
-         stop-color="#9C2438"
-         stop-opacity="1"
-         id="stop10" />
-      <stop
-         offset="1"
-         stop-color="#9C2438"
-         stop-opacity="0"
-         id="stop11" />
-    </linearGradient>
-  </defs>
-  <g
-     stroke="#C9D0CB"
-     stroke-width="1"
-     stroke-dasharray="2 5"
-     id="g19">
-    <line
-       x1="140"
-       y1="45"
-       x2="140"
-       y2="612"
-       id="line11" />
-    <line
-       x1="280"
-       y1="45"
-       x2="280"
-       y2="612"
-       id="line12" />
-    <line
-       x1="416"
-       y1="45"
-       x2="416"
-       y2="612"
-       id="line13" />
-    <line
-       x1="756"
-       y1="45"
-       x2="756"
-       y2="612"
-       id="line14" />
-    <line
-       x1="824"
-       y1="45"
-       x2="824"
-       y2="612"
-       id="line15" />
-    <line
-       x1="892"
-       y1="45"
-       x2="892"
-       y2="612"
-       id="line16" />
-    <line
-       x1="994"
-       y1="45"
-       x2="994"
-       y2="612"
-       id="line17" />
-    <line
-       x1="1028"
-       y1="45"
-       x2="1028"
-       y2="612"
-       id="line18" />
-    <line
-       x1="1062"
-       y1="45"
-       x2="1062"
-       y2="612"
-       id="line19" />
-  </g>
-  <g
-     class="label-year"
-     text-anchor="middle"
-     id="g27">
-    <text
-       x="140"
-       y="30"
-       id="text19">1987</text>
-    <text
-       x="280"
-       y="30"
-       id="text20">2002</text>
-    <text
-       x="416"
-       y="30"
-       id="text21">2006</text>
-    <text
-       x="756"
-       y="30"
-       id="text22">2016</text>
-    <text
-       x="824"
-       y="30"
-       id="text23">2018</text>
-    <text
-       x="892"
-       y="30"
-       id="text24">2020</text>
-    <text
-       x="994"
-       y="30"
-       id="text25">2023</text>
-    <text
-       x="1028"
-       y="30"
-       id="text26">2024</text>
-    <text
-       x="1062"
-       y="30"
-       id="text27">2025</text>
-  </g>
-  <line
-     x1="60"
-     y1="490"
-     x2="140"
-     y2="490"
-     stroke="url(#fadeInGold)"
-     stroke-width="3.5"
-     id="line27" />
-  <line
-     x1="280"
-     y1="320"
-     x2="416"
-     y2="320"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     id="line28" />
-  <line
-     x1="416"
-     y1="320"
-     x2="716"
-     y2="320"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     id="line29" />
-  <line
-     x1="716"
-     y1="320"
-     x2="756"
-     y2="320"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     stroke-dasharray="2 6"
-     id="line30" />
-  <line
-     x1="756"
-     y1="320"
-     x2="824"
-     y2="320"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     id="line31" />
-  <line
-     x1="824"
-     y1="320"
-     x2="994"
-     y2="320"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     id="line32" />
-  <line
-     x1="994"
-     y1="320"
-     x2="1220"
-     y2="320"
-     stroke="url(#fadeOutBlue)"
-     stroke-width="3.5"
-     id="line33" />
-  <line
-     x1="280"
-     y1="150"
-     x2="756"
-     y2="150"
-     stroke="#9C2438"
-     stroke-width="3.5"
-     id="line34" />
-  <line
-     x1="756"
-     y1="150"
-     x2="880"
-     y2="150"
-     stroke="url(#fadeOutRed)"
-     stroke-width="3.5"
-     id="line35" />
-  <line
-     x1="416"
-     y1="570"
-     x2="824"
-     y2="570"
-     stroke="#B85A1E"
-     stroke-width="3.5"
-     id="line36" />
-  <line
-     x1="824"
-     y1="230"
-     x2="892"
-     y2="230"
-     stroke="#8C3E82"
-     stroke-width="3.5"
-     id="line37" />
-  <line
-     x1="824"
-     y1="410"
-     x2="1062"
-     y2="410"
-     stroke="#2E7D4F"
-     stroke-width="3.5"
-     id="line38" />
-  <line
-     x1="994"
-     y1="70"
-     x2="1028"
-     y2="70"
-     stroke="#1E8286"
-     stroke-width="3.5"
-     id="line39" />
-  <path
-     d="M140,320 L185,320 L197,308 L209,332 L221,308 L233,320 L280,320"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     fill="none"
-     id="path39" />
-  <line
-     x1="140"
-     y1="481"
-     x2="140"
-     y2="329"
-     stroke="#B9821A"
-     stroke-width="3.5"
-     marker-end="url(#arrow-gold)"
-     id="line40" />
-  <line
-     x1="280"
-     y1="311"
-     x2="280"
-     y2="159"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     marker-end="url(#arrow-blue)"
-     id="line41" />
-  <line
-     x1="416"
-     y1="329"
-     x2="416"
-     y2="561"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     marker-end="url(#arrow-blue)"
-     id="line42" />
-  <line
-     x1="756"
-     y1="159"
-     x2="756"
-     y2="311"
-     stroke="#9C2438"
-     stroke-width="3.5"
-     marker-end="url(#arrow-red)"
-     id="line43" />
-  <line
-     x1="824"
-     y1="311"
-     x2="824"
-     y2="239"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     marker-end="url(#arrow-blue)"
-     id="line44" />
-  <line
-     x1="824"
-     y1="329"
-     x2="824"
-     y2="401"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     marker-end="url(#arrow-blue)"
-     id="line45" />
-  <line
-     x1="994"
-     y1="311"
-     x2="994"
-     y2="79"
-     stroke="#2C4A88"
-     stroke-width="3.5"
-     marker-end="url(#arrow-blue)"
-     id="line46" />
-  <g
-     fill="#FFFFFF"
-     stroke-width="2"
-     id="g58">
-    <circle
-       cx="140"
-       cy="490"
-       r="6.5"
-       stroke="#B9821A"
-       id="circle46" />
-    <circle
-       cx="140"
-       cy="320"
-       r="6.5"
-       stroke="#2C4A88"
-       id="circle47" />
-    <circle
-       cx="280"
-       cy="320"
-       r="6.5"
-       stroke="#2C4A88"
-       id="circle48" />
-    <circle
-       cx="416"
-       cy="320"
-       r="6.5"
-       stroke="#2C4A88"
-       id="circle49" />
-    <circle
-       cx="756"
-       cy="320"
-       r="6.5"
-       stroke="#2C4A88"
-       id="circle50" />
-    <circle
-       cx="824"
-       cy="320"
-       r="6.5"
-       stroke="#2C4A88"
-       id="circle51" />
-    <circle
-       cx="994"
-       cy="320"
-       r="6.5"
-       stroke="#2C4A88"
-       id="circle52" />
-    <circle
-       cx="280"
-       cy="150"
-       r="6.5"
-       stroke="#9C2438"
-       id="circle53" />
-    <circle
-       cx="756"
-       cy="150"
-       r="6.5"
-       stroke="#9C2438"
-       id="circle54" />
-    <circle
-       cx="416"
-       cy="570"
-       r="6.5"
-       stroke="#B85A1E"
-       id="circle55" />
-    <circle
-       cx="824"
-       cy="230"
-       r="6.5"
-       stroke="#8C3E82"
-       id="circle56" />
-    <circle
-       cx="824"
-       cy="410"
-       r="6.5"
-       stroke="#2E7D4F"
-       id="circle57" />
-    <circle
-       cx="994"
-       cy="70"
-       r="6.5"
-       stroke="#1E8286"
-       id="circle58" />
-  </g>
-  <g
-     fill="#FFFFFF"
-     stroke-width="2"
-     id="g61">
-    <rect
-       x="817.5"
-       y="563.5"
-       width="13"
-       height="13"
-       stroke="#B85A1E"
-       id="rect58" />
-    <rect
-       x="885.5"
-       y="223.5"
-       width="13"
-       height="13"
-       stroke="#8C3E82"
-       id="rect59" />
-    <rect
-       x="1055.5"
-       y="403.5"
-       width="13"
-       height="13"
-       stroke="#2E7D4F"
-       id="rect60" />
-    <rect
-       x="1021.5"
-       y="63.5"
-       width="13"
-       height="13"
-       stroke="#1E8286"
-       id="rect61" />
-  </g>
-  <text
-     class="label-inst"
-     x="128"
-     y="154"
-     text-anchor="end"
-     fill="#9C2438"
-     id="text61">Kyoto</text>
-  <text
-     class="label-inst"
-     x="128"
-     y="324"
-     text-anchor="end"
-     fill="#2C4A88"
-     id="text62">Bloomington</text>
-  <text
-     class="label-inst"
-     x="128"
-     y="476"
-     text-anchor="end"
-     fill="#B9821A"
-     id="text63">Caltech</text>
-  <text
-     class="label-inst"
-     x="849"
-     y="574"
-     text-anchor="start"
-     fill="#B85A1E"
-     id="text64">DSPR</text>
-  <text
-     class="label-inst"
-     x="892"
-     y="253"
-     text-anchor="middle"
-     fill="#8C3E82"
-     id="text65">Wierzbicki</text>
-  <text
-     class="label-inst"
-     x="1087"
-     y="414"
-     text-anchor="start"
-     fill="#2E7D4F"
-     id="text66">Liu</text>
-  <text
-     class="label-inst"
-     x="1053"
-     y="74"
-     text-anchor="start"
-     fill="#1E8286"
-     id="text67">DLPD</text>
-  <text
-     class="label-sub"
-     x="65"
-     y="507"
-     text-anchor="start"
-     id="text68">undated origin</text>
-  <text
-     class="label-sub"
-     x="260"
-     y="356"
-     text-anchor="middle"
-     id="text69">1987–2002 compressed</text>
-  <text
-     class="label-sub"
-     x="1225"
-     y="332"
-     text-anchor="end"
-     id="text70">present</text>
-  <text
-     class="label-sub"
-     x="730"
-     y="336"
-     text-anchor="end"
-     transform="rotate(-35 730 336)"
-     id="text71">contaminated</text>
-  <text
-     class="label-sub"
-     x="416"
-     y="592"
-     text-anchor="middle"
-     id="text72">A. D. Long, 2006</text>
-  <text
-     class="label-sub"
-     x="824"
-     y="214"
-     text-anchor="middle"
-     id="text73">R. Kofler, 2018</text>
-  <text
-     class="label-sub"
-     x="824"
-     y="430"
-     text-anchor="middle"
-     id="text74">Y. Zhong, 2018</text>
-  <text
-     class="label-sub"
-     x="994"
-     y="54"
-     text-anchor="middle"
-     id="text75">M. Chakraborty, 2023</text>
-  <text
-     class="label-sub"
-     x="1087"
-     y="428"
-     text-anchor="start"
-     id="text76">focal assembly</text>
-  <text
-     class="label-sub"
-     x="1053"
-     y="88"
-     text-anchor="start"
-     id="text77">unpublished</text>
-  <g
-     transform="translate(140, 650)"
-     id="g82">
-    <line
-       x1="13"
-       y1="14"
-       x2="13"
-       y2="-13"
-       stroke="#1E2422"
-       stroke-width="3"
-       marker-end="url(#arrow-ink)"
-       id="line77" />
-    <text
-       class="legend-text"
-       x="30"
-       y="4"
-       id="text78">Stock transfer</text>
-    <line
-       x1="170"
-       y1="0"
-       x2="196"
-       y2="0"
-       stroke="#1E2422"
-       stroke-width="3"
-       id="line78" />
-    <text
-       class="legend-text"
-       x="204"
-       y="4"
-       id="text79">Propagation</text>
-    <line
-       x1="340"
-       y1="0"
-       x2="366"
-       y2="0"
-       stroke="#1E2422"
-       stroke-width="3"
-       stroke-dasharray="2 6"
-       id="line79" />
-    <text
-       class="legend-text"
-       x="374"
-       y="4"
-       id="text80">Contamination</text>
-    <circle
-       cx="565"
-       cy="0"
-       r="6.5"
-       fill="#FFFFFF"
-       stroke="#1E2422"
-       stroke-width="2"
-       id="circle80" />
-    <text
-       class="legend-text"
-       x="580"
-       y="4"
-       id="text81">Institution</text>
-    <rect
-       x="713.5"
-       y="-6.5"
-       width="13"
-       height="13"
-       fill="#FFFFFF"
-       stroke="#1E2422"
-       stroke-width="2"
-       id="rect81" />
-    <text
-       class="legend-text"
-       x="734"
-       y="4"
-       id="text82">Public deposition</text>
-  </g>
+<svg viewBox="0 0 1260 700" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Lineage diagram, drawn to a real calendar-year scale except for the 1987-2002 interval, which is compressed and marked with a break in the Bloomington line: Caltech transfers Canton-S to Bloomington in 1987; Bloomington sends it to Kyoto in 2002 and to the DSPR project in 2006; Bloomington's own stock is contaminated for an undocumented period before 2016; Kyoto sends a clean stock back to Bloomington in 2016; Bloomington supplies the Kofler and Zhong labs in 2018 and the DLPD project in 2023; DSPR, Wierzbicki, Liu, and DLPD each culminate in a public data deposition.">
+<defs>
+<style>.label-inst{font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;font-weight:600;font-size:15px;}.label-sub{font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;font-weight:400;font-size:11px;fill:#6C766F;font-style:italic;}.label-year{font-family:"Charter",Georgia,serif;font-variant-numeric:tabular-nums;font-size:13px;fill:#6C766F;}.legend-text{font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:13px;fill:#1E2422;}</style>
+<marker id="arrow-gold" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 0,10 10,5" fill="#B9821A" /></marker>
+<marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 0,10 10,5" fill="#2C4A88" /></marker>
+<marker id="arrow-red" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 0,10 10,5" fill="#9C2438" /></marker>
+<marker id="arrow-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><polygon points="0,0 0,10 10,5" fill="#1E2422" /></marker>
+<linearGradient id="fadeInGold" gradientUnits="userSpaceOnUse" x1="60" y1="0" x2="140" y2="0"><stop offset="0" stop-color="#B9821A" stop-opacity="0" /><stop offset="1" stop-color="#B9821A" stop-opacity="1" /></linearGradient>
+<linearGradient id="fadeOutBlue" gradientUnits="userSpaceOnUse" x1="994" y1="0" x2="1220" y2="0"><stop offset="0" stop-color="#2C4A88" stop-opacity="1" /><stop offset="0.4" stop-color="#2C4A88" stop-opacity="1" /><stop offset="1" stop-color="#2C4A88" stop-opacity="0" /></linearGradient>
+<linearGradient id="fadeOutRed" gradientUnits="userSpaceOnUse" x1="756" y1="0" x2="880" y2="0"><stop offset="0" stop-color="#9C2438" stop-opacity="1" /><stop offset="0.4" stop-color="#9C2438" stop-opacity="1" /><stop offset="1" stop-color="#9C2438" stop-opacity="0" /></linearGradient>
+</defs>
+<g stroke="#C9D0CB" stroke-width="1" stroke-dasharray="2 5">
+<line x1="140" y1="45" x2="140" y2="612" />
+<line x1="280" y1="45" x2="280" y2="612" />
+<line x1="416" y1="45" x2="416" y2="612" />
+<line x1="756" y1="45" x2="756" y2="612" />
+<line x1="824" y1="45" x2="824" y2="612" />
+<line x1="892" y1="45" x2="892" y2="612" />
+<line x1="994" y1="45" x2="994" y2="612" />
+<line x1="1028" y1="45" x2="1028" y2="612" />
+<line x1="1062" y1="45" x2="1062" y2="612" />
+</g>
+<g class="label-year" text-anchor="middle">
+<text x="140" y="30">1987</text>
+<text x="280" y="30">2002</text>
+<text x="416" y="30">2006</text>
+<text x="756" y="30">2016</text>
+<text x="824" y="30">2018</text>
+<text x="892" y="30">2020</text>
+<text x="994" y="30">2023</text>
+<text x="1028" y="30">2024</text>
+<text x="1062" y="30">2025</text>
+</g>
+<line x1="60" y1="490" x2="140" y2="490" stroke="url(#fadeInGold)" stroke-width="3.5" />
+<line x1="280" y1="320" x2="416" y2="320" stroke="#2C4A88" stroke-width="3.5" />
+<line x1="416" y1="320" x2="716" y2="320" stroke="#2C4A88" stroke-width="3.5" />
+<line x1="716" y1="320" x2="756" y2="320" stroke="#2C4A88" stroke-width="3.5" stroke-dasharray="2 6" />
+<line x1="756" y1="320" x2="824" y2="320" stroke="#2C4A88" stroke-width="3.5" />
+<line x1="824" y1="320" x2="994" y2="320" stroke="#2C4A88" stroke-width="3.5" />
+<line x1="994" y1="320" x2="1220" y2="320" stroke="url(#fadeOutBlue)" stroke-width="3.5" />
+<line x1="280" y1="150" x2="756" y2="150" stroke="#9C2438" stroke-width="3.5" />
+<line x1="756" y1="150" x2="880" y2="150" stroke="url(#fadeOutRed)" stroke-width="3.5" />
+<line x1="416" y1="570" x2="824" y2="570" stroke="#B85A1E" stroke-width="3.5" />
+<line x1="824" y1="230" x2="892" y2="230" stroke="#8C3E82" stroke-width="3.5" />
+<line x1="824" y1="410" x2="1062" y2="410" stroke="#2E7D4F" stroke-width="3.5" />
+<line x1="994" y1="70" x2="1028" y2="70" stroke="#1E8286" stroke-width="3.5" />
+<path d="M140,320 L185,320 L197,308 L209,332 L221,308 L233,320 L280,320" stroke="#2C4A88" stroke-width="3.5" fill="none" />
+<line x1="140" y1="481" x2="140" y2="329" stroke="#B9821A" stroke-width="3.5" marker-end="url(#arrow-gold)" />
+<line x1="280" y1="311" x2="280" y2="159" stroke="#2C4A88" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+<line x1="416" y1="329" x2="416" y2="561" stroke="#2C4A88" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+<line x1="756" y1="159" x2="756" y2="311" stroke="#9C2438" stroke-width="3.5" marker-end="url(#arrow-red)" />
+<line x1="824" y1="311" x2="824" y2="239" stroke="#2C4A88" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+<line x1="824" y1="329" x2="824" y2="401" stroke="#2C4A88" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+<line x1="994" y1="311" x2="994" y2="79" stroke="#2C4A88" stroke-width="3.5" marker-end="url(#arrow-blue)" />
+<g fill="#FFFFFF" stroke-width="2">
+<circle cx="140" cy="490" r="6.5" stroke="#B9821A" />
+<circle cx="140" cy="320" r="6.5" stroke="#2C4A88" />
+<circle cx="280" cy="320" r="6.5" stroke="#2C4A88" />
+<circle cx="416" cy="320" r="6.5" stroke="#2C4A88" />
+<circle cx="756" cy="320" r="6.5" stroke="#2C4A88" />
+<circle cx="824" cy="320" r="6.5" stroke="#2C4A88" />
+<circle cx="994" cy="320" r="6.5" stroke="#2C4A88" />
+<circle cx="280" cy="150" r="6.5" stroke="#9C2438" />
+<circle cx="756" cy="150" r="6.5" stroke="#9C2438" />
+<circle cx="416" cy="570" r="6.5" stroke="#B85A1E" />
+<circle cx="824" cy="230" r="6.5" stroke="#8C3E82" />
+<circle cx="824" cy="410" r="6.5" stroke="#2E7D4F" />
+<circle cx="994" cy="70" r="6.5" stroke="#1E8286" />
+</g>
+<g fill="#FFFFFF" stroke-width="2">
+<rect x="817.5" y="563.5" width="13" height="13" stroke="#B85A1E" />
+<rect x="885.5" y="223.5" width="13" height="13" stroke="#8C3E82" />
+<rect x="1055.5" y="403.5" width="13" height="13" stroke="#2E7D4F" />
+<rect x="1021.5" y="63.5" width="13" height="13" stroke="#1E8286" />
+</g>
+<text class="label-inst" x="128" y="154" text-anchor="end" fill="#9C2438">Kyoto</text>
+<text class="label-inst" x="128" y="324" text-anchor="end" fill="#2C4A88">Bloomington</text>
+<text class="label-inst" x="128" y="476" text-anchor="end" fill="#B9821A">Caltech</text>
+<text class="label-inst" x="849" y="574" text-anchor="start" fill="#B85A1E">DSPR</text>
+<text class="label-inst" x="892" y="253" text-anchor="middle" fill="#8C3E82">Wierzbicki</text>
+<text class="label-inst" x="1087" y="414" text-anchor="start" fill="#2E7D4F">Liu</text>
+<text class="label-inst" x="1053" y="74" text-anchor="start" fill="#1E8286">DLPD</text>
+<text class="label-sub" x="65" y="507" text-anchor="start">undated origin</text>
+<text class="label-sub" x="260" y="356" text-anchor="middle">1987–2002 compressed</text>
+<text class="label-sub" x="1225" y="332" text-anchor="end">present</text>
+<text class="label-sub" x="730" y="336" text-anchor="end" transform="rotate(-35 730 336)">contaminated</text>
+<text class="label-sub" x="416" y="592" text-anchor="middle">A. D. Long, 2006</text>
+<text class="label-sub" x="824" y="214" text-anchor="middle">R. Kofler, 2018</text>
+<text class="label-sub" x="824" y="430" text-anchor="middle">Y. Zhong, 2018</text>
+<text class="label-sub" x="994" y="54" text-anchor="middle">M. Chakraborty, 2023</text>
+<text class="label-sub" x="1087" y="428" text-anchor="start">focal assembly</text>
+<text class="label-sub" x="1053" y="88" text-anchor="start">unpublished</text>
+<g transform="translate(140, 650)">
+<line x1="13" y1="14" x2="13" y2="-13" stroke="#1E2422" stroke-width="3" marker-end="url(#arrow-ink)" />
+<text class="legend-text" x="30" y="4">Stock transfer</text>
+<line x1="170" y1="0" x2="196" y2="0" stroke="#1E2422" stroke-width="3" />
+<text class="legend-text" x="204" y="4">Propagation</text>
+<line x1="340" y1="0" x2="366" y2="0" stroke="#1E2422" stroke-width="3" stroke-dasharray="2 6" />
+<text class="legend-text" x="374" y="4">Contamination</text>
+<circle cx="565" cy="0" r="6.5" fill="#FFFFFF" stroke="#1E2422" stroke-width="2" />
+<text class="legend-text" x="580" y="4">Institution</text>
+<rect x="713.5" y="-6.5" width="13" height="13" fill="#FFFFFF" stroke="#1E2422" stroke-width="2" />
+<text class="legend-text" x="734" y="4">Public deposition</text>
+</g>
 </svg>
